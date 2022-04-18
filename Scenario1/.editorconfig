@@ -1,0 +1,236 @@
+# NOTE: Requires **VS2019 16.3** or later
+
+# StyleCopeRules
+# Description: StyleCopeRules custom ruleset
+
+# Code files
+[*.{cs,vb}]
+
+
+# Default severity for analyzer diagnostics - Requires **VS2019 16.5** or later
+dotnet_analyzer_diagnostic.severity = error
+
+# Allow exceptions which don't allow calling all the base level exception constructors
+dotnet_diagnostic.CA1032.severity = none
+
+# We do not want to have all parameters ending with uri be Uri objects
+dotnet_diagnostic.CA1054.severity = none
+
+dotnet_diagnostic.CA1056.severity = none
+
+# Suppress CA1724 which don't allow class type names to be same in whole or in part with types in other namespaces
+dotnet_diagnostic.CA1724.severity = none
+
+# CA1725: Parameter names should match base declaration
+dotnet_diagnostic.CA1725.severity = none
+
+# Suppress CA1801 which don't allow methods to define unused parameters
+dotnet_diagnostic.CA1801.severity = none
+
+# Allow methods which don't access local fields to be static
+dotnet_diagnostic.CA1822.severity = none
+
+# Suppress CA2007 `Do not directly await a Task without calling ConfigureAwait since SynchoronizationContext does not apply to ASP.NET Core
+dotnet_diagnostic.CA2007.severity = none
+
+# These three work in concert to suppress requirement to document public classes and elements, should be programmer decision
+dotnet_diagnostic.CS1591.severity = none
+
+# CA1031: Do not catch general exception types
+dotnet_diagnostic.CA1031.severity = suggestion
+
+# CA1051: Do not declare visible instance fields
+dotnet_diagnostic.CA1051.severity = suggestion
+
+# CA1062: Validate arguments of public methods
+dotnet_diagnostic.CA1062.severity = suggestion
+
+# CA1303: Do not pass literals as localized parameters
+dotnet_diagnostic.CA1303.severity = none
+
+# CA1308: Normalize strings to uppercase
+dotnet_diagnostic.CA1308.severity = none
+
+# CA1805: Do not initialize unnecessarily
+dotnet_diagnostic.CA1805.severity = none
+
+# CA1827: Do not use Count() or LongCount() when Any() can be used
+dotnet_diagnostic.CA1827.severity = suggestion
+
+# CA1829: Use Length/Count property instead of Count() when available
+dotnet_diagnostic.CA1829.severity = suggestion
+
+# CA2000: Dispose objects before losing scope
+# Not disposing a memory stream is just fine
+dotnet_code_quality.CA2000.excluded_symbol_names = MemoryStream
+
+# CA2227: Collection properties should be read only
+dotnet_diagnostic.CA2227.severity = suggestion
+
+# We're not requiring developers to comment all classes and methods
+dotnet_diagnostic.SA0001.severity = none
+
+# SA1005: Single line comments should begin with single space
+dotnet_diagnostic.SA1005.severity = warning
+
+# SA1135: Using directives should be qualified
+dotnet_diagnostic.SA1135.severity = none
+
+# Suppress "PrefixLocalCallsWithThis"
+dotnet_diagnostic.SA1101.severity = none
+
+# We do not want trailing comments at end of multi-line initializers
+dotnet_diagnostic.SA1413.severity = none
+
+# SA1515: Single-line comment should be preceded by blank line
+dotnet_diagnostic.SA1515.severity = suggestion
+
+# Suppress "ElementsMustBeDocumented" because it should be programmer choice whether or not to add XML documentation
+dotnet_diagnostic.SA1600.severity = none
+
+# Suppress "EnumerationItemsMustBeDocumented" because enums are often self-explanatory
+dotnet_diagnostic.SA1602.severity = none
+
+dotnet_diagnostic.SA1606.severity = none
+
+dotnet_diagnostic.SA1615.severity = none
+
+# SA1629: Documentation text should end with a period
+dotnet_diagnostic.SA1629.severity = none
+
+# Suppress "Using directives must be placed outside namespace declaration" because styleCop suggests otherwise and placing it inside namespace avoids unnecessary conflicts
+dotnet_diagnostic.IDE0065.severity = none
+
+# We do not want the developers to use a discard variable when the value returned from a function is not used
+dotnet_diagnostic.IDE0058.severity = none
+
+# We want to suppres "static readonly fields should begin with upper-case letter" because we are using the rule "make field readonly", and there might exist properties with identical naming 
+dotnet_diagnostic.SA1311.severity = none
+
+# We want to suppress rules that suggests the developers to simplify the names of variables/methods like "remove this prefix", "remove directive name when using as it is already included"
+dotnet_diagnostic.IDE0001.severity = none
+
+dotnet_diagnostic.IDE0002.severity = none
+
+dotnet_diagnostic.IDE0003.severity = none
+
+# Suppress  "'if' statement can be simplified" as we leave it to the discretion of the developers to use conditional operator or if-else block
+dotnet_diagnostic.IDE0045.severity = none
+
+dotnet_diagnostic.IDE0046.severity = none
+
+# Suppress "Populate switch" as it forces the developers to add all enum cases to a switch block
+dotnet_diagnostic.IDE0010.severity = none
+
+# Suppressed "Use auto property"
+dotnet_diagnostic.IDE0032.severity = none
+
+# Suppressed "Convert to tuple"
+dotnet_diagnostic.IDE0050.severity = none
+
+# Suppressed "Use local function"
+dotnet_diagnostic.IDE0039.severity = none
+
+# Suppressed "Use block body for methods"
+dotnet_diagnostic.IDE0022.severity = none
+
+# Suppressed "Use expression body for properties/accessors" as it'll be left to the discretion of the developer
+dotnet_diagnostic.IDE0025.severity = none
+
+dotnet_diagnostic.IDE0027.severity = none
+
+# Suppressed "Use pattern matching"
+dotnet_diagnostic.IDE0038.severity = none
+
+dotnet_diagnostic.IDE0019.severity = none
+
+# Suppressed "Private member is unused" temporarily.Todo: Needs to be revisited when there is a change from legacy service to azure service
+dotnet_diagnostic.IDE0051.severity = none
+
+dotnet_diagnostic.IDE0052.severity = none
+
+# Suppressed "Simplify conditional expression" 
+dotnet_diagnostic.IDE0075.severity = none
+
+# Warning to remove unnecessary parentheses
+dotnet_diagnostic.IDE0047.severity = warning
+
+# Suppressed  "'default' expression can be simplified"
+dotnet_diagnostic.IDE0034.severity = none
+
+# Suppressed  "'using' statement can be simplified"
+dotnet_diagnostic.IDE0063.severity = none
+
+# Suppressed  "Intepolation can be simplified"
+dotnet_diagnostic.IDE0071.severity = none
+
+# Suppressed  "Remove unused parameter" temporarily as this will be handled when the DNS related changes are made 
+dotnet_diagnostic.IDE0060.severity = none
+
+# Suppressed  "Use 'switch' expression" 
+dotnet_diagnostic.IDE0066.severity = none
+
+# IDE0130: Namespace does not match folder structure
+# Temporary disable to handle an issue where a trailing dot is required.
+#dotnet_diagnostic.IDE0130.severity = warning
+dotnet_diagnostic.IDE0130.severity = none
+
+# Suppressed "use explicit types instead of using var" when not apparent because we leave it to the discretion of the developer
+csharp_style_var_elsewhere = true:silent
+
+# Suppressed "use built-in types instead of using var" because we leave it to the discretion of the developer
+csharp_style_var_for_built_in_types = false:none
+
+# Use "var" instead of explicit type when it is apparent on the RHS of the expression
+csharp_style_var_when_type_is_apparent = true:silent
+
+# IDE0034WithoutSuggestion: Simplify 'default' expression
+dotnet_diagnostic.IDE0034WithoutSuggestion.severity = none
+
+# CA2007: Do not directly await a Task
+dotnet_diagnostic.CA2007.severity = none
+
+# CA1717: Only FlagsAttribute enums should have plural names
+dotnet_diagnostic.CA1717.severity = none
+
+# Naming rule - async methods must have a suffix 'Async' 
+dotnet_naming_rule.async_methods_should_have_async_suffix.symbols = async_suffix_rule_name
+dotnet_naming_symbols.async_suffix_rule_name.applicable_kinds = method
+dotnet_naming_symbols.async_suffix_rule_name.applicable_accessibilities = *
+dotnet_naming_symbols.async_suffix_rule_name.required_modifiers = async
+
+dotnet_naming_rule.async_methods_should_have_async_suffix.style = async_suffix_style
+dotnet_naming_style.async_suffix_style.required_prefix =
+dotnet_naming_style.async_suffix_style.required_suffix = Async
+dotnet_naming_style.async_suffix_style.word_separator = 
+dotnet_naming_style.async_suffix_style.capitalization = pascal_case
+
+dotnet_naming_rule.async_methods_should_have_async_suffix.severity = error
+
+# CA2201: Do not raise reserved exception types
+dotnet_diagnostic.CA2201.severity = warning
+
+# CA1711: Identifiers should not have incorrect suffix
+dotnet_diagnostic.CA1711.severity = warning
+
+# CA1024: Use properties where appropriate
+dotnet_diagnostic.CA1024.severity = warning
+
+# CA1309: Use ordinal string comparison
+dotnet_diagnostic.CA1309.severity = warning
+
+# CA1508: Avoid dead conditional code
+dotnet_diagnostic.CA1508.severity = warning
+
+# CA1813: Avoid unsealed attributes
+dotnet_diagnostic.CA1813.severity = warning
+
+# CA5398: Avoid hardcoded SslProtocols values
+dotnet_diagnostic.CA5398.severity = warning
+
+# CA5401: Do not use CreateEncryptor with non-default IV
+dotnet_diagnostic.CA5401.severity = warning
+
+dotnet_diagnostic.IDE0078.severity = none
+
+dotnet_diagnostic.IDE0090.severity = none

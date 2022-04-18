@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<AssemblyName>PetImagesTest</AssemblyName>
+		<TargetFramework>net6.0</TargetFramework>
+		<OutputPath>.\bin\</OutputPath>
+		<EnableNETAnalyzers>false</EnableNETAnalyzers>
+		<AnalysisMode>all</AnalysisMode>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<NugetPackagesPath Condition="'$(NUGET_PACKAGES)' == ''">../../packages</NugetPackagesPath>
+		<NugetPackagesPath Condition="'$(NUGET_PACKAGES)' != ''">$(NUGET_PACKAGES)</NugetPackagesPath>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\PetImages\PetImages.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.4" />
+		<PackageReference Include="Microsoft.Coyote" Version="1.5.3" />
+		<PackageReference Include="Microsoft.Coyote.Test" Version="1.5.3" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+		<PackageReference Include="MSTest.TestAdapter" Version="2.2.9" />
+		<PackageReference Include="MSTest.TestFramework" Version="2.2.9" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="coyote.runtimeconfig.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<Target Name="CoyoteRewriteWindows" AfterTargets="AfterBuild">
+		<Exec Command="dotnet $(NugetPackagesPath)/microsoft.coyote.test/1.5.3/lib/$(TargetFramework)/coyote.dll rewrite ../rewrite.coyote.json" />
+	</Target>
+</Project>

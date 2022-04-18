@@ -1,0 +1,10 @@
+{
+  "AssembliesPath": "./PetImagesTest/bin/net6.0",
+  "Assemblies": [
+    "PetImages.dll",
+    "PetImages.Worker.dll",
+    "PetImagesTest.dll",
+    "Polly.dll"
+  ],
+  "IsRewritingConcurrentCollections":"false"
+}
