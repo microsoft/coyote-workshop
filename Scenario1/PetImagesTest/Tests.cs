@@ -22,7 +22,6 @@ namespace PetImagesTest.Clients
     {
         private static readonly bool useInMemoryClient = true;
 
-        [TestMethod]
         public async Task TestFirstScenarioAsync()
         {
             var serviceClient = await InitializeSystemAsync();

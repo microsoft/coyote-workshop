@@ -27,7 +27,6 @@ namespace PetImagesTest.Clients
     {
         private static readonly bool useInMemoryClient = true;
 
-        [TestMethod]
         public async Task TestFirstScenarioAsync()
         {
             var serviceClient = await InitializeSystemAsync();
@@ -65,7 +64,6 @@ namespace PetImagesTest.Clients
                 (statusCode1 == HttpStatusCode.Conflict && statusCode2 == HttpStatusCode.OK));
         }
 
-        [TestMethod]
         public async Task TestSecondScenarioUpdateAsync()
         {
             var serviceClient = await InitializeSystemAsync();
@@ -142,7 +140,6 @@ namespace PetImagesTest.Clients
                 (statusCode1 == HttpStatusCode.OK && statusCode2 == HttpStatusCode.OK));
         }
 
-        [TestMethod]
         public async Task TestSecondScenarioCreateAsync()
         {
             var serviceClient = await InitializeSystemAsync();
@@ -194,7 +191,6 @@ namespace PetImagesTest.Clients
                 (statusCode1 == HttpStatusCode.OK && statusCode2 == HttpStatusCode.OK));
         }
 
-        [TestMethod]
         public async Task TestThirdScenarioAsync()
         {
             var serviceClient = await InitializeSystemAsync();
@@ -249,7 +245,6 @@ namespace PetImagesTest.Clients
             }
         }
 
-        [TestMethod]
         public async Task TestFourthScenarioAsync()
         {
             var serviceClient = await InitializeSystemAsync();
