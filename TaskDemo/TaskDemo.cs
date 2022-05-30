@@ -9,9 +9,12 @@
         public string ApplyBlackAndWhiteFilter(string path)
         {
             int j = 0;
-            for (int i = 0; i < 1000000; i++)
+            for (int k = 0; k < 100; k++)
             {
-                j = j * i;
+                for (int i = 0; i < 1000000; i++)
+                {
+                    j = j * i;
+                }
             }
             Console.WriteLine($"[{path}] Applied B&W filter");
 
@@ -21,9 +24,12 @@
         public string ApplySketchFilter(string path)
         {
             int j = 0;
-            for (int i = 0; i < 1000000; i++)
+            for (int k = 0; k < 100; k++)
             {
-                j = j * i;
+                for (int i = 0; i < 1000000; i++)
+                {
+                    j = j * i;
+                }
             }
             Console.WriteLine($"[{path}] Applied Sketch filter");
 
@@ -51,9 +57,12 @@
         public string ApplyBlackAndWhiteFilter(string path)
         {
             int j = 0;
-            for (int i = 0; i < 1000000; i++)
+            for (int k = 0; k < 100; k++)
             {
-                j = j * i;
+                for (int i = 0; i < 1000000; i++)
+                {
+                    j = j * i;
+                }
             }
 
             Console.WriteLine($"[{path}] Applied B&W filter");
@@ -64,9 +73,12 @@
         public string ApplySketchFilter(string path)
         {
             int j = 0;
-            for (int i = 0; i < 1000000; i++)
+            for (int k = 0; k < 100; k++)
             {
-                j = j * i;
+                for (int i = 0; i < 1000000; i++)
+                {
+                    j = j * i;
+                }
             }
 
             Console.WriteLine($"[{path}] Applied Sketch filter");
@@ -104,9 +116,12 @@
         public string ApplyBlackAndWhiteFilter(string path)
         {
             int j = 0;
-            for (int i = 0; i < 1000000; i++)
+            for (int k = 0; k < 100; k++)
             {
-                j = j * i;
+                for (int i = 0; i < 1000000; i++)
+                {
+                    j = j * i;
+                }
             }
 
             Console.WriteLine($"[{path}] Applied B&W filter");
@@ -117,9 +132,12 @@
         public string ApplySketchFilter(string path)
         {
             int j = 0;
-            for (int i = 0; i < 1000000; i++)
+            for (int k = 0; k < 100; k++)
             {
-                j = j * i;
+                for (int i = 0; i < 1000000; i++)
+                {
+                    j = j * i;
+                }
             }
 
             Console.WriteLine($"[{path}] Applied Sketch filter");
@@ -164,9 +182,12 @@
         public async Task<string> ApplyBlackAndWhiteFilter(string path)
         {
             int j = 0;
-            for (int i = 0; i < 1000000; i++)
+            for (int k = 0; k < 100; k++)
             {
-                j = j * i;
+                for (int i = 0; i < 1000000; i++)
+                {
+                    j = j * i;
+                }
             }
 
             Console.WriteLine($"[{path}] Applied B&W filter");
@@ -177,9 +198,12 @@
         public async Task<string> ApplySketchFilter(string path)
         {
             int j = 0;
-            for (int i = 0; i < 1000000; i++)
+            for (int k = 0; k < 100; k++)
             {
-                j = j * i;
+                for (int i = 0; i < 1000000; i++)
+                {
+                    j = j * i;
+                }
             }
 
             Console.WriteLine($"[{path}] Applied Sketch filter");
@@ -208,9 +232,12 @@
         public async Task<string> ApplyBlackAndWhiteFilter(string path)
         {
             int j = 0;
-            for (int i = 0; i < 1000000; i++)
+            for (int k = 0; k < 100; k++)
             {
-                j = j * i;
+                for (int i = 0; i < 1000000; i++)
+                {
+                    j = j * i;
+                }
             }
 
             Console.WriteLine($"[{path}] Applied B&W filter");
@@ -221,9 +248,12 @@
         public async Task<string> ApplySketchFilter(string path)
         {
             int j = 0;
-            for (int i = 0; i < 1000000; i++)
+            for (int k = 0; k < 100; k++)
             {
-                j = j * i;
+                for (int i = 0; i < 1000000; i++)
+                {
+                    j = j * i;
+                }
             }
 
             Console.WriteLine($"[{path}] Applied Sketch filter");
@@ -256,9 +286,12 @@
             return await Task.Run(() =>
             {
                 int j = 0;
-                for (int i = 0; i < 1000000; i++)
+                for (int k = 0; k < 100; k++)
                 {
-                    j = j * i;
+                    for (int i = 0; i < 1000000; i++)
+                    {
+                        j = j * i;
+                    }
                 }
 
                 Console.WriteLine($"[{path}] Applied B&W filter");
@@ -272,9 +305,12 @@
             return await Task.Run(() =>
             {
                 int j = 0;
-                for (int i = 0; i < 1000000; i++)
+                for (int k = 0; k < 100; k++)
                 {
-                    j = j * i;
+                    for (int i = 0; i < 1000000; i++)
+                    {
+                        j = j * i;
+                    }
                 }
 
                 Console.WriteLine($"[{path}] Applied Sketch filter");
@@ -320,7 +356,11 @@
 
             if (demoNumber == 1)
             {
-                new TaskDemo1().Demo();
+                for (int i = 0; i < 10; i++)
+                {
+                    new TaskDemo1().Demo();
+                    Console.WriteLine("\r\n-----\r\n");
+                }
             }
             else if (demoNumber == 2)
             {
