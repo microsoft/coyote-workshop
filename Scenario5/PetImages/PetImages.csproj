@@ -10,7 +10,7 @@
 	<ItemGroup>
 	  <PackageReference Include="Azure.Storage.Blobs" Version="12.11.0" />
 	  <PackageReference Include="Azure.Storage.Common" Version="12.10.0" />
-	  <PackageReference Include="Azure.Storage.Queues" Version="12.9.0" />
+	  <PackageReference Include="Azure.Storage.Queues" Version="12.11.0" />
 	  <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.26.1" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	  <PackageReference Include="Polly" Version="7.2.3" />
